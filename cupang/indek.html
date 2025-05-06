@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>landing page</title>
+    <style>
+        @font-face {
+            font-family: poppins;
+            src: url(../../../font/font/poppins.ttf);
+        }
+        @font-face {
+            font-family: inter;
+            src: url(source/font/inter.ttf);
+        }
+    </style>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --terang: #fafafa;
+            --gelap: #0a0a0a;
+        }
+        body {
+            background-color: var(--terang);
+            font-size: .9rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+
+            height: max-content;
+            width: 100%;
+
+            font-family: poppins;
+
+            overflow-x: hidden;
+
+            position: relative;
+        }
+        .cropVideo {
+
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .backgroundContent {
+            width: 140%;
+            overflow: hidden;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .backVid {
+            transform: translateX(-8%);
+            width: 100%;
+            max-width: auto;
+            background-color: rgba(0, 0, 0, 0.762);
+        }
+
+        .textIni {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 32px;
+            padding-top: 120px;
+            color: var(--terang);
+            text-shadow: 0 0 3px var(--gelap);
+
+            .kiri {
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                width: 520px;
+                p, small {
+                    font-family: inter;
+                }
+                .judul {
+                    h1 {
+                        color: var(--gelap);
+                    }
+                }
+                .keterangan {
+                    line-height: 1rem;
+                }
+                .wannaTry {
+                    position: fixed;
+                    bottom: 132px;
+                    left: 132px;
+
+                    width: max-content;
+                    padding-top: 62px;
+                    color: var(--gelap);
+
+                    .button {
+                        position: relative;
+                        width: 100%;
+                        height: max-content;
+
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 4px 0;
+
+                        margin-top: 4px;
+
+                        cursor: pointer;
+
+                        transition: scale .05s ease;
+
+                        .touch {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+
+                            width: 100%;
+                            height: 100%;
+
+                            background-color: #ffffffd5;
+                            filter: blur(2px);
+                            border-radius: 8px;
+
+                            z-index: -1;
+                            transition: filter .3s ease;
+                        }
+                        h4 {
+                            color: var(--terang);
+                            transition: color .3s ease;
+                        }
+
+                    }
+                    .button:hover {
+                        .touch {
+                            filter: blur(1px);
+                            box-shadow: 0 0 5px var(--gelap);
+                        }
+                        h4 {
+                            color: var(--gelap);
+                            text-shadow: 0 0 2px var(--gelap);
+                        }
+                    }
+                    .button:active {
+                        scale: .91;
+                    }
+                    
+                }
+            }
+        }
+        .background2 {
+            position: absolute;
+            top: -32px;
+            left: 0;
+
+            width: 100%;
+            height: calc(100% + 32px);
+            overflow: hidden;
+            .ketara {
+                height: 200%;
+                width: 1520px;
+                background-color: #0a0a0a8f;
+                rotate: -30deg;
+                filter: blur(13px);
+
+                box-shadow: 3px 3px 32px #0a0a0a8f;
+            }
+        }
+        .background3 {
+            position: fixed;
+            top: 0;
+            right: 0;
+
+            width: 50%;
+            height: 100vh;
+
+            transform: translateX(100%);
+
+            transition: transform .2s ease;
+            .ketara {
+
+                padding: 12px 21px;
+
+                width: 100%;
+                height: 100%;
+                background-color: #fafafaa8;
+                /* filter: blur(3px) */
+
+                display: flex;
+                flex-direction: column;
+
+                gap: 12px;
+
+                p {
+                    font-family: inter;
+                }
+            }
+        }
+        .background3.muncul {
+            transform: translateX(0);
+        }
+    </style>
+    <style>
+        @media screen and (max-width: 922px) {
+            body {
+                background-color: var(--gelap);
+                font-size: .8rem;
+            }
+            .textIni {
+                position: inherit;
+                padding-top: 32px;
+                .kiri {
+                    width: 100%;
+                    .judul {
+                        h1 {
+                            color: var(--terang);
+                        }
+                    }
+                    .keterangan {
+                        width: 100%;
+                    }
+                    .wannaTry {
+                        position:inherit;
+                        color: var(--terang);
+                    }
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="cropVideo">
+            <div class="backgroundContent">
+                <video class="backVid" autoplay muted play-inline loop>
+                    <source src="source/mp4/BackCompress.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+
+        <div class="background2">
+            <div class="ketara"></div>
+        </div>
+        <div class="background3">
+            <div class="ketara">
+                <div class="habitat">
+                    <h4>Habitat</h4>
+                    <p>Ikan air tawar yang sanggup hidup di air yang keruh, ikan ini tidak terlalu butuh udara yang terlarut pada air karena ikan cupang memliki bagian ingsan yang sanggup mengambil oksigen langsung dari udara.</p>
+                    <p>hampir seperti kodok yang hidup di air. tidak butuh aerator.</p>
+                    <p>semakin modern daya tahan tubuh ikan ini pun semakin menurun jadi untuk di pelihara, butuh air yang tidak mengandung bakteri dan jamur.</p>
+                    <p>oleh karena itu air perlu dirawat dengan diberi perhatian lebih seperti mengganti air, atau membuat ekosistem.</p>
+                </div>
+                <div class="ekosiste">
+                    <h4>membuat Ekosistem Ikan Cupang</h4>
+                    <p>Hanya cukup merawat air, seperti memberi air cukup panas agar bakteri dan jamur tidak merajalela.</p>
+                    <p>Merawat tanaman air agar oksigen pada air cukup, karena oksigen pada air mempengaruhi perkembangan bakteri dan jamur, sehingga semakin banyak oksigen terlarut pada air semakin sedikit bakteri dan jamur.</p>
+                    <p>awasi wadah ekosistem agar tidak diganggu oleh hewan lain seperti kodok.</p>
+                    <p>air tidak terlalu bergerak atau air tenang.</p>
+                    <p>berimakan pada satu titik agar ikan menghafal titik dimana dia sering diberi makan.</p>
+                    <h4>Disarankan</h4>
+                    <p>Membuat ekosistem yang terkena sianar matahari, dan karena terkena sinar matahari tidak boleh terlalu lama, karena memungkinkan bagi air menjadi mendidih.</p>
+                    <p>berimakan seperti jentik-jentik nyamuk atau cacing darah atau cacing pita.</p>
+                </div>
+                <div class="Breading">
+                    <h4>Mengawinkan</h4>
+                    <p>Masukkan pejantan pada wadah ekosistem, lalu biarkan kira-kira 2-5 hari. hal ini bertujuan untuk mengetes ekosistem dan membuat pejantan mengenali medan dan daerah kekuasaannya.</p>
+                    <p>masukkan betina di hari yang ditentukan pada 5 jam sebelum petang. karena ketika malam mereka akan tidur. dan mereka akan saling berinteraksi sebelum lelah yaitu 5 jam.</p>
+                    <p>pejantan akan membuat sarang untuk membesarkan anak-anak mereka. dan mereka akan kawin di pagi hari selama 1 sampai 2 hari.</p>
+                    <p>pada ekosistem yang luas betina tidak perlu dipisah, tetapi bila sempit, betina harus dipisah, agar tidak ada kannibalisme.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="textIni">
+            <div class="kiri">
+                <div class="judul">
+                    <h1>Dancing fish from South Asia</h1>
+                    <h2>betta fish || siamese fish || fighting fish</h2>
+                </div>
+    
+                <div class="keterangan">
+                    <small>this beautiful creature have allot nick name. on my country its called Cupang.</small>
+                    <small>the reason why ? because betta fish realy teritory animal and become agresif if another male enter their teritory</small>
+                    <small>but its diffrent if a female enter the male teritory.</small>
+                    <small>the male will dancing like a shy boy and run to everywhere, because the male is atracted, and the female will try to follow the male until the male is tired.</small>
+                    <small>when the male is tired, he will build a nest, and start breading in the morning.</small>
+                </div>
+
+                <div class="wannaTry">
+                    <h4>wanna try breading Betta Fish ?</h4>
+                    <div class="button">
+                        <div class="touch"></div>
+                        <h4>try now !!!</h4>
+                    </div>
+                    <div class="button learn">
+                        <div class="touch"></div>
+                        <h4>learn more</h4>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const button = document.querySelector(".button.learn")
+        const learnMore = document.querySelector(".background3")
+
+        var clicked = false
+        button.addEventListener("click", function(){
+            console.log(clicked)
+            if(!clicked){
+                button.querySelector("h4").style.color = "var(--gelap)"
+                learnMore.classList.add("muncul")
+                
+                clicked = !clicked
+            } else {
+                button.querySelector("h4").style.color = "var(--terang)"
+                learnMore.classList.remove("muncul")
+                clicked = !clicked
+            }
+        })
+    </script>
+</body>
+</html>

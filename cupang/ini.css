@@ -1,0 +1,49 @@
+@keyframes words {
+    0%,20%{
+        content: "everything start from";
+    }
+    21%,40%{
+        content: "human 70% is";
+    }
+    41%,60%{
+        content: "most produce oxygen is";
+    }
+    61%,80%{
+        content: "live is";
+    }
+    81%,100%{
+        content: "shower with";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+@keyframes cursor {
+    to{
+        /* border-left: 2px solid #ff7f5000; */
+    }
+}
+
+.top h2 span{
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+    position: relative;
+}
+.top h2 span::before{
+    content: "everything start from";
+    animation: words 20s infinite;
+}
+
+.top h2 span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    /* border-left: 2px solid #fff; */
+    right: -8px;
+}
