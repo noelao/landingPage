@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delecious</title>
+    <style>
+        @font-face {
+            font-family: poppins;
+            src: url(source/font/Poppins/Poppins-Regular.ttf);
+        }
+        @font-face {
+            font-family: montserrat;
+            src: url(source/font/Montserrat/Montserrat-VariableFont_wght.ttf);
+        }
+    </style>
+    <style>
+        :root {
+            --terang:#fff;
+            --gelap:#000;
+
+            /* cfdbd5,e8eddf,f5cb5c,242423,333533 */
+
+            --warna1:#cfdbd5;
+            --warna2:#e8eddf;
+            --warna3:#f5cb5c;
+            --warna4:#242423;
+            --warna5:#333533;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            font-family: montserrat;
+        }
+
+        .wrapper {
+            width: 1410px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .container .landingOne {
+            width: 100%;
+            height: max-content;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            z-index: -1;
+
+            .wrapper {
+                height: 89vh;
+                flex-direction: row;
+
+                position: fixed;
+                top: 0;
+
+                .kiri {
+                    flex: 1;
+                    height: 100%;
+
+                    background-color: var(--warna5);
+                }
+                .kanan {
+                    flex: 1;
+                    height: 100%;
+
+                    background-color: var(--warna5);
+                }
+            }
+        }
+
+        .container .kataKataPembuka {
+            padding: 30px 0;
+
+            width: 100%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .wrapper {
+                align-items: center;
+                flex-direction: column;
+
+                height: max-content;
+                gap: 52px;
+                color: var(--warna2);
+
+                padding: 0 21px;
+
+                .judul {
+                    display: flex;
+                    flex-direction: column;
+
+                    align-items: center;
+
+                    margin: 8px;
+                    padding: 12px 0;
+                    width: 100%;
+
+                    background-color: var(--warna4);
+                }
+                .keterangan {
+                    width: 432px;
+                    height: max-content;
+
+                    padding: 8px 12px;
+                    position: relative;
+                    
+                    .background2 {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+
+                        height: 100%;
+                        width: 100%;
+                        background-color: var(--warna4);
+                        z-index: -1;
+
+                        border-radius: 8px;
+                        /* filter: blur(8px); */
+                        opacity: .8;
+                    }
+                }
+                .emot {
+                    font-size: 5rem;
+                }
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="landingOne">
+            <div class="wrapper">
+                <div class="kiri"></div>
+                <div class="kanan"></div>
+            </div>
+        </div>
+        <div class="pengeGap"></div>
+        <div class="kataKataPembuka">
+            <div class="wrapper">
+                <div class="judul">
+                    <h1>~ You are what you eat ~</h1>
+                    <small>kamu adalah apa yang kamu makan</small>
+                </div>
+                <div class="keterangan satu">
+                    <div class="background2"></div>
+                    <p>
+                        pemalas, mageran, nggak mau cari makan sendiri, payah dalam relationship, kurang jantan, insting keibuaan tidak ada, dan buta akan kasih sayang ibu.
+                    </p>
+                </div>
+                <div class="emot satu">
+                    🥲
+                </div>
+                <div class="keterangan dua">
+                    <div class="background2"></div>
+                    <p>
+                        itulah yang dirasakan oleh ayam-ayam ternak dan itulah yang kalian makan.
+                    </p>
+                    <p>
+                        tak ayal sifat itu memungkinkan mempengaruhi sipemakan daging tersebut.
+                    </p>
+                </div>
+                <div class="emot dua">🤔</div>
+                <div class="keterangan tiga">
+                    <div class="background2"></div>
+                    <p>
+                        salah satu alasan diharamkannya babi adalah karena sifat babi ketika bereproduksi.
+                        Yaitu kebiasaan babi jantan manawari pejantan lainnya untuk menyetubuhi betina yang baru di setubuhinya.
+                    </p>
+                    <p>
+                        Jauh berbeda dengan ayam, kambing, sapi yang siap mati demi betina dan wilayah.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <div class="pengeGap"></div>
+
+        <footer></footer>
+    </div>
+    
+    <style>
+        .pengeGap {
+            height: 82vh;
+        }
+        .container footer {
+            width: 100%;
+            height: 360px   ;
+            background-color: var(--warna4);
+        }
+    </style>
+    <script src="scroll.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            min-height: 200vh;
+            width: 100%;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .pengeGap {
+            height: 90vh;
+
+            animation: emotan;
+        }
+
+        @keyframes emotan {
+            0%{opacity: 0;}
+
+            50%{opacity: 1;}
+
+            100%{opacity: 1;}
+        }
+        .emot {
+            font-size: 7rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="pengeGap"></div>
+        <div class="emot kesatu">🥲</div>
+        <div class="emot kedua">🥲</div>
+    </div>
+    
+    <script>
+        var tinggi = window.innerHeight
+
+        window.addEventListener("scroll", function(){
+
+            var value = scrollY
+            var sarat = tinggi * .1
+
+            atur({
+                    value : value, 
+                    bagian : document.querySelector(".kesatu"),
+                    limit : [314,0],
+                    kanan : true,
+                    mulai : sarat
+                })
+            atur({
+                    value : value, 
+                    bagian : document.querySelector(".kedua"),
+                    limit : [314,0],
+                    kanan : false,
+                    mulai : sarat
+                })
+
+        })
+        function atur({
+                value, 
+                bagian, 
+                limit,
+                mulai,
+
+                scale = 1,
+                opacity = 1,
+                kanan = true
+            }
+        ){
+            if(value > mulai){
+                if (value > mulai + limit[0]) {
+                    if(kanan){
+                        bagian.style.transform = `translateX(${limit[0]}px) translateY(${limit[1]}px)`
+                    }else{
+                        bagian.style.transform = `translateX(-${limit[0]}px) translateY(-${limit[1]}px)`
+                    }
+                } else {
+                    if(kanan){
+                        bagian.style.transform = `translateX(${value - mulai}px)`
+                    }else{
+                        bagian.style.transform = `translateX(-${value - mulai}px)`
+                    }
+                }
+            }
+            else {
+                bagian.style.transform = "translateX(0)"
+            }
+        }
+    </script>
+</body>
+</html>
